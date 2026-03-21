@@ -1,0 +1,1842 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/25/2025 9:43:15 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-GHMDGON"
+  DTS:CreatorName="DESKTOP-GHMDGON\Suite"
+  DTS:DTSID="{5B39CBCD-5E49-4915-AB5E-68EAEB89DB0E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="10250"
+  DTS:ObjectName="Capa_ODS"
+  DTS:PackageType="5"
+  DTS:VersionBuild="29"
+  DTS:VersionGUID="{03F8B9A4-76B7-41B3-86EF-1BFF1F5D545C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Contenedor de secuencias - Extracción"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Contenedor de secuencias"
+      DTS:DTSID="{02E1CBB0-4C86-488B-B656-D0F83C1E962A}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Contenedor de secuencias - Extracción">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Contenedor de secuencias - Extracción\Cargar Asesores"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarea Flujo de datos"
+          DTS:DTSID="{4EDE48C9-73F8-467A-815A-885D8107115C}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Cargar Asesores"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Destino de OLE DB"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino de OLE DB"
+                  name="Destino de OLE DB"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowset">[ods].[M_Asesores]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL para ejecutar."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Destino de OLE DB.Connections[OleDbConnection]"
+                      connectionManagerID="{29D63C63-413F-4E42-A6E0-A23A7DAC9FD6}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-GHMDGON.DM_CONTRATOS_SELECTRA.sa]"
+                      description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]"
+                      errorOrTruncationOperation="Insertar"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de destino de OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[idAsesor]"
+                          cachedDataType="i4"
+                          cachedName="idAsesor"
+                          externalMetadataColumnId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[idAsesor]"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[idAsesor]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[idEquipo]"
+                          cachedDataType="i4"
+                          cachedName="idEquipo"
+                          externalMetadataColumnId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[idEquipo]"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[idEquipo]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[nombre]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="40"
+                          cachedName="nombre"
+                          externalMetadataColumnId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombre]"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[nombre]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[estado]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="15"
+                          cachedName="estado"
+                          externalMetadataColumnId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[estado]"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[estado]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[idAsesor]"
+                          dataType="i4"
+                          name="idAsesor" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[idEquipo]"
+                          dataType="i4"
+                          name="idEquipo" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombre]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          name="nombre" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[estado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="estado" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Salida de error de destino de OLE DB"
+                      synchronousInputId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+                  description="Origen de OLE DB"
+                  name="Origen de OLE DB"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowset">[dbo].[ASESOR]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL para ejecutar."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="Variable que contiene el comando SQL para ejecutar."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Asignaciones entre los parámetros del comando SQL y las variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB.Connections[OleDbConnection]"
+                      connectionManagerID="{34C186C4-7D85-4EE9-B32D-96CDCE49D9FF}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-GHMDGON.CONTRATOSSELECTRA.sa]"
+                      description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB.Outputs[Salida de origen de OLE DB]"
+                      name="Salida de origen de OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[idAsesor]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[idAsesor]"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[idAsesor]"
+                          name="idAsesor"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[idEquipo]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[idEquipo]"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[idEquipo]"
+                          name="idEquipo"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[nombre]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[nombre]"
+                          length="40"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[nombre]"
+                          name="nombre"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[estado]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[estado]"
+                          length="15"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[estado]"
+                          name="estado"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[idAsesor]"
+                          dataType="i4"
+                          name="idAsesor" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[idEquipo]"
+                          dataType="i4"
+                          name="idEquipo" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[nombre]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          name="nombre" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[estado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="estado" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB]"
+                      isErrorOut="true"
+                      name="Salida de error de origen de OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[idAsesor]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[idAsesor]"
+                          name="idAsesor" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[idEquipo]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[idEquipo]"
+                          name="idEquipo" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[nombre]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[nombre]"
+                          name="nombre" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[estado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[estado]"
+                          name="estado" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Contenedor de secuencias - Extracción\Cargar Asesores.Paths[Salida de origen de OLE DB]"
+                  endId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]"
+                  name="Salida de origen de OLE DB"
+                  startId="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB.Outputs[Salida de origen de OLE DB]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Contenedor de secuencias - Extracción\Cargar Equipos"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarea Flujo de datos"
+          DTS:DTSID="{4FDA52EF-99EF-4915-B2BF-815C34698AC7}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Cargar Equipos"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Destino de OLE DB"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino de OLE DB"
+                  name="Destino de OLE DB"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowset">[ods].[M_Equipos]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL para ejecutar."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Destino de OLE DB.Connections[OleDbConnection]"
+                      connectionManagerID="{29D63C63-413F-4E42-A6E0-A23A7DAC9FD6}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-GHMDGON.DM_CONTRATOS_SELECTRA.sa]"
+                      description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]"
+                      errorOrTruncationOperation="Insertar"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de destino de OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[idEquipo]"
+                          cachedDataType="i4"
+                          cachedName="idEquipo"
+                          externalMetadataColumnId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[idEquipo]"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[idEquipo]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[nombreEquipo]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="40"
+                          cachedName="nombreEquipo"
+                          externalMetadataColumnId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombreEquipo]"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[nombreEquipo]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[jefeEquipo]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="40"
+                          cachedName="jefeEquipo"
+                          externalMetadataColumnId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[jefeEquipo]"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[jefeEquipo]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[idEquipo]"
+                          dataType="i4"
+                          name="idEquipo" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombreEquipo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          name="nombreEquipo" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[jefeEquipo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          name="jefeEquipo" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Salida de error de destino de OLE DB"
+                      synchronousInputId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Origen de OLE DB"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+                  description="Origen de OLE DB"
+                  name="Origen de OLE DB"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowset">[dbo].[EQUIPO]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL para ejecutar."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="Variable que contiene el comando SQL para ejecutar."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Asignaciones entre los parámetros del comando SQL y las variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Origen de OLE DB.Connections[OleDbConnection]"
+                      connectionManagerID="{34C186C4-7D85-4EE9-B32D-96CDCE49D9FF}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-GHMDGON.CONTRATOSSELECTRA.sa]"
+                      description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Origen de OLE DB.Outputs[Salida de origen de OLE DB]"
+                      name="Salida de origen de OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[idEquipo]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[idEquipo]"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[idEquipo]"
+                          name="idEquipo"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[nombreEquipo]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[nombreEquipo]"
+                          length="40"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[nombreEquipo]"
+                          name="nombreEquipo"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[jefeEquipo]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[jefeEquipo]"
+                          length="40"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[jefeEquipo]"
+                          name="jefeEquipo"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[idEquipo]"
+                          dataType="i4"
+                          name="idEquipo" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[nombreEquipo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          name="nombreEquipo" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[jefeEquipo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          name="jefeEquipo" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB]"
+                      isErrorOut="true"
+                      name="Salida de error de origen de OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[idEquipo]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[idEquipo]"
+                          name="idEquipo" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[nombreEquipo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[nombreEquipo]"
+                          name="nombreEquipo" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[jefeEquipo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[jefeEquipo]"
+                          name="jefeEquipo" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Contenedor de secuencias - Extracción\Cargar Equipos.Paths[Salida de origen de OLE DB]"
+                  endId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]"
+                  name="Salida de origen de OLE DB"
+                  startId="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Origen de OLE DB.Outputs[Salida de origen de OLE DB]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarea Flujo de datos"
+          DTS:DTSID="{C16F6DF8-6327-49D4-B89A-7C858E951F80}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Cargar KPIS"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Destino de OLE DB"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino de OLE DB"
+                  name="Destino de OLE DB"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowset">[ods].[M_KPIS]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL para ejecutar."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Destino de OLE DB.Connections[OleDbConnection]"
+                      connectionManagerID="{29D63C63-413F-4E42-A6E0-A23A7DAC9FD6}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-GHMDGON.DM_CONTRATOS_SELECTRA.sa]"
+                      description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]"
+                      errorOrTruncationOperation="Insertar"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de destino de OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[idKPI]"
+                          cachedDataType="i4"
+                          cachedName="idKPI"
+                          externalMetadataColumnId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[idKPI]"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[idKPI]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[idEquipo]"
+                          cachedDataType="i4"
+                          cachedName="idEquipo"
+                          externalMetadataColumnId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[idEquipo]"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[idEquipo]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[nombre]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="40"
+                          cachedName="nombre"
+                          externalMetadataColumnId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombre]"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[nombre]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[metaDiaria]"
+                          cachedDataType="i4"
+                          cachedName="metaDiaria"
+                          externalMetadataColumnId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[metaDiaria]"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[metaDiaria]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[metaMensual]"
+                          cachedDataType="i4"
+                          cachedName="metaMensual"
+                          externalMetadataColumnId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[metaMensual]"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[metaMensual]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[idKPI]"
+                          dataType="i4"
+                          name="idKPI" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[idEquipo]"
+                          dataType="i4"
+                          name="idEquipo" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombre]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          name="nombre" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[metaDiaria]"
+                          dataType="i4"
+                          name="metaDiaria" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[metaMensual]"
+                          dataType="i4"
+                          name="metaMensual" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Salida de error de destino de OLE DB"
+                      synchronousInputId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+                  description="Origen de OLE DB"
+                  name="Origen de OLE DB"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowset">[dbo].[KPI]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL para ejecutar."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="Variable que contiene el comando SQL para ejecutar."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Asignaciones entre los parámetros del comando SQL y las variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Connections[OleDbConnection]"
+                      connectionManagerID="{34C186C4-7D85-4EE9-B32D-96CDCE49D9FF}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-GHMDGON.CONTRATOSSELECTRA.sa]"
+                      description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de origen de OLE DB]"
+                      name="Salida de origen de OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[idKPI]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[idKPI]"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[idKPI]"
+                          name="idKPI"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[idEquipo]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[idEquipo]"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[idEquipo]"
+                          name="idEquipo"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[nombre]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[nombre]"
+                          length="40"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[nombre]"
+                          name="nombre"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[metaDiaria]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[metaDiaria]"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[metaDiaria]"
+                          name="metaDiaria"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[metaMensual]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[metaMensual]"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[metaMensual]"
+                          name="metaMensual"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[idKPI]"
+                          dataType="i4"
+                          name="idKPI" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[idEquipo]"
+                          dataType="i4"
+                          name="idEquipo" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[nombre]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          name="nombre" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[metaDiaria]"
+                          dataType="i4"
+                          name="metaDiaria" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[metaMensual]"
+                          dataType="i4"
+                          name="metaMensual" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB]"
+                      isErrorOut="true"
+                      name="Salida de error de origen de OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[idKPI]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[idKPI]"
+                          name="idKPI" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[idEquipo]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[idEquipo]"
+                          name="idEquipo" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[nombre]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[nombre]"
+                          name="nombre" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[metaDiaria]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[metaDiaria]"
+                          name="metaDiaria" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[metaMensual]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[metaMensual]"
+                          name="metaMensual" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Contenedor de secuencias - Extracción\Cargar KPIS.Paths[Salida de origen de OLE DB]"
+                  endId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]"
+                  name="Salida de origen de OLE DB"
+                  startId="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB.Outputs[Salida de origen de OLE DB]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarea Flujo de datos"
+          DTS:DTSID="{04924F01-CFCA-4C1D-B719-1B3EC46597A6}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Cargar Ventas"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Destino de OLE DB"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino de OLE DB"
+                  name="Destino de OLE DB"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowset">[ods].[M_Ventas]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL para ejecutar."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Destino de OLE DB.Connections[OleDbConnection]"
+                      connectionManagerID="{29D63C63-413F-4E42-A6E0-A23A7DAC9FD6}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-GHMDGON.DM_CONTRATOS_SELECTRA.sa]"
+                      description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]"
+                      errorOrTruncationOperation="Insertar"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de destino de OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[idVenta]"
+                          cachedDataType="i8"
+                          cachedName="idVenta"
+                          externalMetadataColumnId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[idVenta]"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[idVenta]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[idAsesor]"
+                          cachedDataType="i4"
+                          cachedName="idAsesor"
+                          externalMetadataColumnId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[idAsesor]"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[idAsesor]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[fecha]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="fecha"
+                          externalMetadataColumnId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[fecha]"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[fecha]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[tipoServicio]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="tipoServicio"
+                          externalMetadataColumnId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[tipoServicio]"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[tipoServicio]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[cantidad]"
+                          cachedDataType="i4"
+                          cachedName="cantidad"
+                          externalMetadataColumnId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[cantidad]"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[cantidad]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[idVenta]"
+                          dataType="i8"
+                          name="idVenta" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[idAsesor]"
+                          dataType="i4"
+                          name="idAsesor" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[fecha]"
+                          dataType="wstr"
+                          length="10"
+                          name="fecha" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[tipoServicio]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="tipoServicio" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[cantidad]"
+                          dataType="i4"
+                          name="cantidad" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Salida de error de destino de OLE DB"
+                      synchronousInputId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+                  description="Origen de OLE DB"
+                  name="Origen de OLE DB"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowset">[dbo].[VENTA]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL para ejecutar."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="Variable que contiene el comando SQL para ejecutar."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Asignaciones entre los parámetros del comando SQL y las variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Connections[OleDbConnection]"
+                      connectionManagerID="{34C186C4-7D85-4EE9-B32D-96CDCE49D9FF}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-GHMDGON.CONTRATOSSELECTRA.sa]"
+                      description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de origen de OLE DB]"
+                      name="Salida de origen de OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[idVenta]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[idVenta]"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[idVenta]"
+                          name="idVenta"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[idAsesor]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[idAsesor]"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[idAsesor]"
+                          name="idAsesor"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[fecha]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[fecha]"
+                          length="10"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[fecha]"
+                          name="fecha"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[tipoServicio]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[tipoServicio]"
+                          length="20"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[tipoServicio]"
+                          name="tipoServicio"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[cantidad]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[cantidad]"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[cantidad]"
+                          name="cantidad"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[idVenta]"
+                          dataType="i8"
+                          name="idVenta" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[idAsesor]"
+                          dataType="i4"
+                          name="idAsesor" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[fecha]"
+                          dataType="wstr"
+                          length="10"
+                          name="fecha" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[tipoServicio]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="tipoServicio" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[cantidad]"
+                          dataType="i4"
+                          name="cantidad" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB]"
+                      isErrorOut="true"
+                      name="Salida de error de origen de OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[idVenta]"
+                          dataType="i8"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[idVenta]"
+                          name="idVenta" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[idAsesor]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[idAsesor]"
+                          name="idAsesor" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[fecha]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[fecha]"
+                          name="fecha" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[tipoServicio]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[tipoServicio]"
+                          name="tipoServicio" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[cantidad]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[cantidad]"
+                          name="cantidad" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Contenedor de secuencias - Extracción\Cargar Ventas.Paths[Salida de origen de OLE DB]"
+                  endId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]"
+                  name="Salida de origen de OLE DB"
+                  startId="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB.Outputs[Salida de origen de OLE DB]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tarea Ejecutar SQL"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{8ACE3D43-B241-44DE-AC0B-3F10F54AFB3B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarea Ejecutar SQL"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{29D63C63-413F-4E42-A6E0-A23A7DAC9FD6}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE ods.M_Asesores&#xA;TRUNCATE TABLE ods.M_Equipos&#xA;TRUNCATE TABLE ods.M_KPIS&#xA;TRUNCATE TABLE ods.M_Ventas" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{F6A4E037-3F21-4659-9FCE-FB0B51C1B4F2}"
+      DTS:From="Package\Tarea Ejecutar SQL"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Contenedor de secuencias - Extracción" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Contenedor de secuencias - Extracción\Cargar Asesores"
+          TopLeft="41.5,23" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Contenedor de secuencias - Extracción\Cargar Equipos"
+          TopLeft="240,23" />
+        <NodeLayout
+          Size="136,42"
+          Id="Package\Contenedor de secuencias - Extracción\Cargar KPIS"
+          TopLeft="46,101" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Contenedor de secuencias - Extracción\Cargar Ventas"
+          TopLeft="227,99" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="459,198"
+          Size="459,241"
+          Id="Package\Contenedor de secuencias - Extracción"
+          TopLeft="49,78" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Tarea Ejecutar SQL"
+          TopLeft="188,2" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="275.75,44">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Contenedor de secuencias - Extracción\Cargar Asesores">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB"
+          TopLeft="95.5,25.5" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Destino de OLE DB"
+          TopLeft="246,145" />
+        <EdgeLayout
+          Id="Package\Contenedor de secuencias - Extracción\Cargar Asesores.Paths[Salida de origen de OLE DB]"
+          TopLeft="177.5,67.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="152.5,77.5"
+              Start="0,0"
+              End="152.5,70">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.75"
+                    Point2="0,38.75"
+                    Point3="4,38.75" />
+                  <mssgle:LineSegment
+                    End="148.5,38.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="148.5,38.75"
+                    Point2="152.5,38.75"
+                    Point3="152.5,42.75" />
+                  <mssgle:LineSegment
+                    End="152.5,70" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Destino de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Contenedor de secuencias - Extracción\Cargar Asesores\Origen de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Contenedor de secuencias - Extracción\Cargar Equipos">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Origen de OLE DB"
+          TopLeft="129,44" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Destino de OLE DB"
+          TopLeft="268,240" />
+        <EdgeLayout
+          Id="Package\Contenedor de secuencias - Extracción\Cargar Equipos.Paths[Salida de origen de OLE DB]"
+          TopLeft="211,86">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="141,154"
+              Start="0,0"
+              End="141,146.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,73" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,73"
+                    Point2="0,77"
+                    Point3="4,77" />
+                  <mssgle:LineSegment
+                    End="137,77" />
+                  <mssgle:CubicBezierSegment
+                    Point1="137,77"
+                    Point2="141,77"
+                    Point3="141,81" />
+                  <mssgle:LineSegment
+                    End="141,146.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Destino de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Contenedor de secuencias - Extracción\Cargar Equipos\Origen de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Contenedor de secuencias - Extracción\Cargar KPIS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Destino de OLE DB"
+          TopLeft="282,189" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB"
+          TopLeft="121,74" />
+        <EdgeLayout
+          Id="Package\Contenedor de secuencias - Extracción\Cargar KPIS.Paths[Salida de origen de OLE DB]"
+          TopLeft="203,116">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="163,73"
+              Start="0,0"
+              End="163,65.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.5"
+                    Point2="0,36.5"
+                    Point3="4,36.5" />
+                  <mssgle:LineSegment
+                    End="159,36.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="159,36.5"
+                    Point2="163,36.5"
+                    Point3="163,40.5" />
+                  <mssgle:LineSegment
+                    End="163,65.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Destino de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Contenedor de secuencias - Extracción\Cargar KPIS\Origen de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Contenedor de secuencias - Extracción\Cargar Ventas">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Destino de OLE DB"
+          TopLeft="449,186" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB"
+          TopLeft="247,71" />
+        <EdgeLayout
+          Id="Package\Contenedor de secuencias - Extracción\Cargar Ventas.Paths[Salida de origen de OLE DB]"
+          TopLeft="329,113">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="204,73"
+              Start="0,0"
+              End="204,65.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.5"
+                    Point2="0,36.5"
+                    Point3="4,36.5" />
+                  <mssgle:LineSegment
+                    End="200,36.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="200,36.5"
+                    Point2="204,36.5"
+                    Point3="204,40.5" />
+                  <mssgle:LineSegment
+                    End="204,65.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Destino de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Contenedor de secuencias - Extracción\Cargar Ventas\Origen de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

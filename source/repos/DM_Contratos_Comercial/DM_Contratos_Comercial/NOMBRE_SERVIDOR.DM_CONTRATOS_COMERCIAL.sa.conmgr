@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DESKTOP-GHMDGON.DM_CONTRATOS_SELECTRA.sa"
+  DTS:DTSID="{29D63C63-413F-4E42-A6E0-A23A7DAC9FD6}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=DESKTOP-GHMDGON;User ID=sa;Initial Catalog=DM_CONTRATOS_SELECTRA;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-DM_Contratos_Selectra-{29D63C63-413F-4E42-A6E0-A23A7DAC9FD6}DESKTOP-GHMDGON.DM_CONTRATOS_SELECTRA.sa;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAARb0UKnTbTEa58daO3QzaWwAAAAACAAAAAAAQZgAAAAEAACAAAAB0u4hX2igcxmiX0rklg2mnDBZGDF+whIzQawVam10J4AAAAAAOgAAAAAIAACAAAAAnDCXK51a5aRqlxAjSSOiLGO5Eip1Kwc82qtbrUZ2dUIAAAAB7XqvuOmVC5Nv7qkn6VOM39X2FdhPI2u6dz+FnBpnZ0fLq77Zm2hzPjxgXYdDRA8BqOzrFDbrsxgHVcYvGVDm5Vx1z/jMa8w1B/FF34o6NuPnmLIyK72fkgjjcDvWU8JjFo3uZ3oZL5NezkIwXf6Ig6jqyZ2cAsIG1B6t7w9r1M0AAAACvfhADnY+ze5R12LLjDaHKBzSqOcnCQ0UXdTebWPpQkIVDwg0f9h+tVYRQmNN2MlZTEIkmhCEfs/c+S/AUBqpD</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
